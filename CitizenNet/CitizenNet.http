@@ -1,0 +1,6 @@
+@CitizenNet_HostAddress = http://localhost:5255
+
+GET {{CitizenNet_HostAddress}}/api/hotel/
+Accept: application/json
+
+###
