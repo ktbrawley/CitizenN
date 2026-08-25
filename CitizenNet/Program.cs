@@ -4,11 +4,18 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddDbContext<HotelDbContext>(options =>
+    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+if (!app.Configuration.GetValue<bool>("SkipMigrationsOnStartup"))
 {
+    using var scope = app.Services.CreateScope();
+    var db = scope.ServiceProvider.GetRequiredService<HotelDbContext>();
+    db.Database.Migrate();
+}
+
     app.UseSwagger();
     app.UseSwaggerUI();
 }
