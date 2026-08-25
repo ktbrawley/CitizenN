@@ -1,3 +1,6 @@
 <Solution>
-  <Project Path="CitizenNet/CitizenNet.csproj" />
+  <Project Path="CitizenNet.Core/CitizenNet.Core.csproj" Id="e2dc5062-55b0-4725-9ef8-8434a2b7e187" />
+  <Project Path="CitizenNet.Data/CitizenNet.Data.csproj" Id="dcae5dcf-b8b3-4cdc-a3e4-e4b729454b3e" />
+  <Project Path="CitizenNet.Tests/CitizenNet.Tests.csproj" Id="e8a347ef-e5b0-4462-8e17-f6aca81a1c86" />
+  <Project Path="CitizenNet/CitizenNet.API.csproj" />
 </Solution>
