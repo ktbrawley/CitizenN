@@ -1,3 +1,6 @@
+using CitizenNet.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -16,9 +19,8 @@ if (!app.Configuration.GetValue<bool>("SkipMigrationsOnStartup"))
     db.Database.Migrate();
 }
 
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.UseHttpsRedirection();
 
