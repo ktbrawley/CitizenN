@@ -14,7 +14,7 @@ namespace CitizenNet.Data.Entities
 
         public Room? Room { get; set; }
 
-        public DateOnly Date { get; set; }
+        public DateTime Date { get; set; }
 
         public int BookingId { get; set; }
 
