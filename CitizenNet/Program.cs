@@ -1,3 +1,4 @@
+using CitizenNet.API.Repositories;
 using CitizenNet.Data;
 using Microsoft.EntityFrameworkCore;
 
@@ -6,6 +7,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllers();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddScoped<IHotelRepository, HotelRepository>();
 
 builder.Services.AddDbContext<HotelDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
